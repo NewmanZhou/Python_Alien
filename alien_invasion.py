@@ -23,7 +23,7 @@ def run_game():
     bullets = Group()
     # 创建一个外星人群
     aliens = Group()
-    gf.create_fleet(ai_settings,screen,aliens)
+    gf.create_fleet(ai_settings, screen, ship, aliens)
 
     # 设置背景颜色
     # bg_color = ai_settings.bg_color

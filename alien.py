@@ -12,7 +12,8 @@ class Alien(Sprite):
         self.ai_settings = ai_settings
 
         # 加载外星人图像，并设置其rect 属性
-        self.image = pygame.image.load('alien_invasion/images/alien.bmp')
+        self.image = pygame.image.load(
+            r'D:\Python_Space\alien_invasion_git\Python_Alien\images\alien.bmp')
         self.rect = self.image.get_rect()
 
         # 每个外星人最差的位置都在屏幕左上角附近
