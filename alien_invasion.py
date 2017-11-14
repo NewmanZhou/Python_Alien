@@ -1,0 +1,42 @@
+
+import pygame
+from pygame.sprite import Group
+from settings import Settings
+from ship import Ship
+from alien import Alien
+import game_functions as gf
+
+''' 外星人入侵 练手项目 '''
+
+
+def run_game():
+    # 初始化游戏并创建一个屏幕对象
+    pygame.init()
+    ai_settings = Settings()
+    screen = pygame.display.set_mode((ai_settings.screen_width,
+                                      ai_settings.screen_hight))
+    pygame.display.set_caption("Alien Invasion")
+
+    # 创建一艘飞船
+    ship = Ship(ai_settings, screen)
+    # 创建一个用于存储子弹的编组
+    bullets = Group()
+    # 创建一个外星人群
+    aliens = Group()
+    gf.create_fleet(ai_settings,screen,aliens)
+
+    # 设置背景颜色
+    # bg_color = ai_settings.bg_color
+
+    # 开始游戏的主循环
+    while True:
+        # 监事键盘和鼠标事件
+        gf.check_events(ai_settings, screen, ship, bullets)
+        ship.update()
+        gf.update_bullets(bullets)
+        # 每次循环时都重绘屏
+        # 让最近绘制的屏幕可见，并干掉老屏幕，不断刷新
+        gf.update_screen(ai_settings, screen, ship, aliens, bullets)
+
+
+run_game()
