@@ -33,7 +33,8 @@ def run_game():
         # 监事键盘和鼠标事件
         gf.check_events(ai_settings, screen, ship, bullets)
         ship.update()
-        gf.update_bullets(bullets)
+        gf.update_bullets(aliens, bullets)
+        gf.update_aliens(ai_settings, aliens)
         # 每次循环时都重绘屏
         # 让最近绘制的屏幕可见，并干掉老屏幕，不断刷新
         gf.update_screen(ai_settings, screen, ship, aliens, bullets)
