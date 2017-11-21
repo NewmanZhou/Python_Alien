@@ -1,4 +1,4 @@
-
+# -*- coding: UTF-8 -*-
 import pygame
 from pygame.sprite import Group
 from settings import Settings
@@ -7,7 +7,7 @@ from alien import Alien
 import game_functions as gf
 from game_stats import GameStats
 
-''' 外星人入侵 练手项目 '''
+# ''' 外星人入侵 练手项目 '''
 
 
 def run_game():
